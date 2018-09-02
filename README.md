@@ -1,4 +1,4 @@
-# PopularMoviesStageOne
+# Popular Movies Stage One
 
 ## Project Overview
 Popular Movies App is part of the project required to be completed for Udacity Android Intermediate Nanodegree Course
