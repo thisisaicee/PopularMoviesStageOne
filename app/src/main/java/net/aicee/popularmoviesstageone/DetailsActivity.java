@@ -28,7 +28,7 @@ import butterknife.ButterKnife;
 
 public class DetailsActivity extends AppCompatActivity {
     public static final String EXTRA_MOVIE_ID = "movie_id";
-    private MoviesModel movie;
+    private MovieModel movieModel;
     final static String BASE_URL = "https://api.themoviedb.org/3/movie/";
     final static String API_KEY = "api_key";
     private String movieID = "";
@@ -67,13 +67,13 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void loadDataToUI(){
-        setTitle(movie.getTitle());
-        Picasso.with(this).load(movie.getBackdropPath()).into(backDropImageView);
-        Picasso.with(this).load(movie.getPosterPath()).into(posterImageView);
-        titleTextView.setText(movie.getTitle());
-        userRatingTextView.setText(movie.getVoteAverage());
-        releaseDateTextView.setText(movie.getReleaseDate());
-        overviewTextView.setText(movie.getOverview());
+        setTitle(movieModel.getTitle());
+        Picasso.with(this).load(movieModel.getBackdropPath()).into(backDropImageView);
+        Picasso.with(this).load(movieModel.getPosterPath()).into(posterImageView);
+        titleTextView.setText(movieModel.getTitle());
+        userRatingTextView.setText(movieModel.getVoteAverage());
+        releaseDateTextView.setText(movieModel.getReleaseDate());
+        overviewTextView.setText(movieModel.getOverview());
         overviewLabelTextView.setText(getString(R.string.overview_label));
         ratingLabelTextView.setText(getString(R.string.user_score_label));
         releaseDateLabelTextView.setText(getString(R.string.release_date_label));
@@ -146,7 +146,7 @@ public class DetailsActivity extends AppCompatActivity {
             Log.d("API_RESPONSE", response.toString());
             try {
                 JSONObject jsonObject = new JSONObject(response);
-                movie = JSonUtils.parseMovieJson(jsonObject);
+                movieModel = JSonUtils.parseMovieJson(jsonObject);
                 loadDataToUI();
             } catch (JSONException je) {
                 je.printStackTrace();
