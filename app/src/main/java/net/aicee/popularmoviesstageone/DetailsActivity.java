@@ -146,7 +146,7 @@ public class DetailsActivity extends AppCompatActivity {
             Log.d("API_RESPONSE", response.toString());
             try {
                 JSONObject jsonObject = new JSONObject(response);
-                movieModel = JSonUtils.parseMovieJson(jsonObject);
+                movieModel = JsonUtils.parseMovieJson(jsonObject);
                 loadDataToUI();
             } catch (JSONException je) {
                 je.printStackTrace();
