@@ -10,5 +10,5 @@
     <string name="user_score_label">User Score:</string>
     <string name="release_date_label">Release Date:</string>
     <string name="overview_label">Synopsis</string>
-    <string name="api_key">9a3ad6b56708b5f736f75e9ed989af88</string>
+    <string name="api_key">*****ENTER API KEY*******</string>
 </resources>
